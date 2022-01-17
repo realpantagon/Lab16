@@ -19,14 +19,15 @@ int main(){
 }
 
 void shuffle(int *a,int *b,int *c,int *d){
-	int *shuff[]={a,b,c,d};
+	int *bank[]={a,b,c,d};
 	int mem;
+	int ran1 = rand()%4;
+	int ran2 = rand()%4;
 	
-	int ran = rand()%4;
-	
-	for(int i = 3 ; i >= 0; i--){
-		mem = *shuff[ran];
-		*shuff[ran] = *shuff[i];
-		*shuff[i] = mem;
+	while(ran1 == ran2){
+		ran2 =rand()%4;
 	}
+	mem = *bank[ran1];
+	*bank[ran1]= *bank[ran2];
+	*bank[ran2]=mem;
 }

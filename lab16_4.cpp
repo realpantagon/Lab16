@@ -17,3 +17,17 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a,int &b,int &c,int &d){
+	int *bank[]={&a,&b,&c,&d};
+	int mem;
+	int ran1 = rand()%4;
+	int ran2 = rand()%4;
+	
+	while(ran1 == ran2){
+		ran2 =rand()%4;
+	}
+	mem = *bank[ran1];
+	*bank[ran1]= *bank[ran2];
+	*bank[ran2]=mem;
+}
